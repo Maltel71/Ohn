@@ -224,6 +224,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 55a808bc80f25354b826f2c69b053c2b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b2ad8a3158c52bf458aff251aefac11b, type: 2}
     - target: {fileID: 919132149155446097, guid: 55a808bc80f25354b826f2c69b053c2b, type: 3}
       propertyPath: m_Name
       value: DownPipe_01
@@ -389,6 +393,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 1c0ba6ea39a89064997f6680c2499c9c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 19052edc7a31e584b8826eebf2b2b62a, type: 2}
     - target: {fileID: 919132149155446097, guid: 1c0ba6ea39a89064997f6680c2499c9c, type: 3}
       propertyPath: m_Name
       value: DoorHandle_Metal_01
@@ -621,6 +629,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 23d32cdabf1c5ba49bc4f1c029919231, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: acd6a55a04b18134c8e0ee2288b49d19, type: 2}
     - target: {fileID: 919132149155446097, guid: 23d32cdabf1c5ba49bc4f1c029919231, type: 3}
       propertyPath: m_Name
       value: Stair_Stone_01
@@ -1027,6 +1039,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 718495c03d3d3cb47a1d827f74e4c96f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 24bc3693ae03049428b86985a2caf35d, type: 2}
     - target: {fileID: 919132149155446097, guid: 718495c03d3d3cb47a1d827f74e4c96f, type: 3}
       propertyPath: m_Name
       value: MetalChimneyCap_01
@@ -1347,6 +1363,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f3fd6ead282e5334aa58cd28c8528eef, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a9f714b5985a5d64693d18ce75179f3c, type: 2}
     - target: {fileID: 919132149155446097, guid: f3fd6ead282e5334aa58cd28c8528eef, type: 3}
       propertyPath: m_Name
       value: HorseShoe
@@ -1518,6 +1538,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 933abca00b4447c45843575272050a00, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b2ad8a3158c52bf458aff251aefac11b, type: 2}
     - target: {fileID: 919132149155446097, guid: 933abca00b4447c45843575272050a00, type: 3}
       propertyPath: m_Name
       value: WhiteCylinderDetail_01
@@ -1746,6 +1770,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0c158e3b83ea1c9429ab57cf9a93c60c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b2ad8a3158c52bf458aff251aefac11b, type: 2}
     - target: {fileID: 919132149155446097, guid: 0c158e3b83ea1c9429ab57cf9a93c60c, type: 3}
       propertyPath: m_Name
       value: SmallWhiteStick_01
@@ -1974,6 +2002,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: e92e936b34187404d8b7485ea5195917, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 24bc3693ae03049428b86985a2caf35d, type: 2}
     - target: {fileID: 919132149155446097, guid: e92e936b34187404d8b7485ea5195917, type: 3}
       propertyPath: m_Name
       value: Stick_Metal_01
@@ -2145,6 +2177,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4d9100b6a8c43d94cb352e40f187a76e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a9f714b5985a5d64693d18ce75179f3c, type: 2}
     - target: {fileID: 919132149155446097, guid: 4d9100b6a8c43d94cb352e40f187a76e, type: 3}
       propertyPath: m_Name
       value: NailHandmade_Metal_01
@@ -2434,6 +2470,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 8497a8d9c589af647ab9b0f1de4d807d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: dfc930c4c9b166f4b91bd326ed9c37f8, type: 2}
     - target: {fileID: 919132149155446097, guid: 8497a8d9c589af647ab9b0f1de4d807d, type: 3}
       propertyPath: m_Name
       value: Chimney_Brick_01
@@ -2491,6 +2531,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5ace6678428389340b57e38108c8b8e9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9503384242a2a6b4c942f50e449edd70, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 5ace6678428389340b57e38108c8b8e9, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9503384242a2a6b4c942f50e449edd70, type: 2}
     - target: {fileID: 919132149155446097, guid: 5ace6678428389340b57e38108c8b8e9, type: 3}
       propertyPath: m_Name
       value: RoofPart_Tiles_01
@@ -2605,6 +2653,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 840ebb7c7abf7e64687aabc9a1a008d3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b2ad8a3158c52bf458aff251aefac11b, type: 2}
     - target: {fileID: 919132149155446097, guid: 840ebb7c7abf7e64687aabc9a1a008d3, type: 3}
       propertyPath: m_Name
       value: MetalDetail_02
