@@ -288,6 +288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d48ff90dc5f487449b505cad7d0f162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRotationSpeed: {x: 30, y: 30, z: 30}
-  smoothTime: 1
-  changeInterval: 3
+  maxRotationSpeed: {x: 360, y: 360, z: 360}
+  smoothTime: 3.43
+  changeInterval: 3.69
