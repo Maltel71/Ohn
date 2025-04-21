@@ -251,7 +251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 322293718480823488}
-  - component: {fileID: 4863064293172739629}
+  - component: {fileID: 7410224717197788737}
   m_Layer: 0
   m_Name: Fire_thing_1
   m_TagString: Untagged
@@ -276,7 +276,7 @@ Transform:
   - {fileID: 7302234076489998412}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4863064293172739629
+--- !u!114 &7410224717197788737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -285,9 +285,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5792747683609252095}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b5350a040920254c83b2c8ff5d241bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d48ff90dc5f487449b505cad7d0f162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxRotationSpeed: {x: 30, y: 30, z: 30}
   smoothTime: 1
-  changeInterval: 10
+  changeInterval: 3
