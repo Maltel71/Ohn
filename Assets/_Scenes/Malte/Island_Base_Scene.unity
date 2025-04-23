@@ -409,6 +409,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 851919625928104498, guid: 67c6e23f672638b488f14cd56fa1a1ac, type: 3}
+      propertyPath: InitialModule.startColor.minColor.a
+      value: 0.70980394
+      objectReference: {fileID: 0}
     - target: {fileID: 2369866502102058966, guid: 67c6e23f672638b488f14cd56fa1a1ac, type: 3}
       propertyPath: m_Name
       value: Campfire_Newest
