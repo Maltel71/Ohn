@@ -54,7 +54,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ReverbFX
+  m_Name: ReverbFXSynth
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 21ae79ea807ca1d47820972257110c81
   m_Children: []
@@ -99,7 +99,9 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 99d5cf211109cd54bb71629be6e5b0c4
+    name: ReverbVolumeParameter
   m_AudioMixerGroupViews:
   - guids:
     - 6218de0f1224421448d4d1557d62d1bc
