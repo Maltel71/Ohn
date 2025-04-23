@@ -9,24 +9,22 @@ public class RandomCharacterMovement : MonoBehaviour
     public float maxSpeed = 3f;
     public float boundaryRadius = 10f;
 
-    // Behavior chances (per second)
-    [Range(0, 1)]
-    public float chanceToChangeDirection = 0.3f;
-    [Range(0, 1)]
-    public float chanceToPause = 0.2f;
-    [Range(0, 1)]
-    public float chanceToJump = 0.1f;
+    // Behavior timing (in seconds)
+    public float changeDirectionInterval = 5f;
+    public float pauseInterval = 10f;
+    public float jumpInterval = 4f;
+    public float pauseDuration = 2f;
+
+    // Internal timers
+    private float directionTimer;
+    private float pauseTimer;
+    private float jumpTimer;
 
     // Movement state
     private Vector3 moveDirection;
     private Vector3 startPosition;
     private Rigidbody rb;
     private bool isPaused = false;
-
-    // Timers for random events
-    private float directionChangeTimer = 0f;
-    private float pauseTimer = 0f;
-    private float jumpTimer = 0f;
 
     private void Start()
     {
@@ -35,8 +33,11 @@ public class RandomCharacterMovement : MonoBehaviour
         if (rb == null)
         {
             rb = gameObject.AddComponent<Rigidbody>();
-            rb.constraints = RigidbodyConstraints.FreezeRotation;
         }
+
+        // Freeze rotation on X and Z axes to keep character upright
+        // but allow rotation on Y axis so character can face movement direction
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
         // Ensure we have a sphere collider
         if (GetComponent<SphereCollider>() == null)
@@ -49,41 +50,49 @@ public class RandomCharacterMovement : MonoBehaviour
 
         // Initial random direction
         PickNewDirection();
+
+        // Randomize initial timers so behaviors don't all happen at once
+        directionTimer = Random.Range(0f, changeDirectionInterval);
+        pauseTimer = Random.Range(0f, pauseInterval);
+        jumpTimer = Random.Range(0f, jumpInterval);
     }
 
     private void Update()
     {
-        // Handle random decision timers
-        directionChangeTimer -= Time.deltaTime;
+        if (isPaused) return;
+
+        // Update timers
+        directionTimer -= Time.deltaTime;
         pauseTimer -= Time.deltaTime;
         jumpTimer -= Time.deltaTime;
 
-        // Check for random behavior changes
-        if (directionChangeTimer <= 0 && !isPaused)
+        // Change direction on interval
+        if (directionTimer <= 0)
         {
-            directionChangeTimer = 1f / chanceToChangeDirection;
-            if (Random.value < chanceToChangeDirection * Time.deltaTime * 10)
-            {
-                PickNewDirection();
-            }
+            PickNewDirection();
+            directionTimer = changeDirectionInterval;
         }
 
-        if (pauseTimer <= 0 && !isPaused)
+        // Pause on interval
+        if (pauseTimer <= 0)
         {
-            pauseTimer = 1f / chanceToPause;
-            if (Random.value < chanceToPause * Time.deltaTime * 10)
-            {
-                StartCoroutine(Pause());
-            }
+            StartCoroutine(Pause());
+            pauseTimer = pauseInterval;
         }
 
-        if (jumpTimer <= 0 && IsGrounded() && !isPaused)
+        // Jump on interval if grounded
+        if (jumpTimer <= 0)
         {
-            jumpTimer = 1f / chanceToJump;
-            if (Random.value < chanceToJump * Time.deltaTime * 10)
+            // Debug info to help us understand what's happening
+            Debug.Log("Jump timer expired, is grounded: " + IsGrounded());
+
+            if (IsGrounded())
             {
                 Jump();
             }
+
+            // Reset timer regardless to avoid jump spam if grounding fails
+            jumpTimer = jumpInterval;
         }
 
         // Check boundary
@@ -108,6 +117,16 @@ public class RandomCharacterMovement : MonoBehaviour
             horizontalVelocity = horizontalVelocity.normalized * maxSpeed;
             rb.linearVelocity = new Vector3(horizontalVelocity.x, rb.linearVelocity.y, horizontalVelocity.z);
         }
+
+        // Make character face movement direction
+        if (horizontalVelocity.magnitude > 0.1f)
+        {
+            // Create rotation that looks in the direction of movement
+            Quaternion targetRotation = Quaternion.LookRotation(horizontalVelocity);
+
+            // Smoothly rotate towards that direction
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.fixedDeltaTime * 5f);
+        }
     }
 
     private bool IsGrounded()
@@ -131,27 +150,25 @@ public class RandomCharacterMovement : MonoBehaviour
     private IEnumerator Pause()
     {
         isPaused = true;
-        float duration = Random.Range(1f, 3f);
 
         // Look around behavior
         if (Random.value > 0.5f)
         {
-            // Just look in random directions
-            float lookTime = duration * 0.8f;
             float startTime = Time.time;
+            float lookDuration = pauseDuration * 0.8f;
 
-            while (Time.time < startTime + lookTime)
+            while (Time.time < startTime + lookDuration)
             {
+                // Look in a new direction occasionally
                 if (Random.value > 0.95f)
                 {
-                    // Look in a new direction occasionally
                     PickNewDirection();
                 }
                 yield return null;
             }
         }
 
-        yield return new WaitForSeconds(Random.Range(0.2f, 0.5f));
+        yield return new WaitForSeconds(pauseDuration - (pauseDuration * 0.8f));
         isPaused = false;
     }
 }

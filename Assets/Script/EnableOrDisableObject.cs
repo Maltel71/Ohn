@@ -1,34 +1,41 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ObjectToggleSwitch : MonoBehaviour
 {
-    public GameObject targetObject;
+    public List<GameObject> targetObjects = new List<GameObject>();
     public string playerTag = "Player";
     public bool triggerOnExit = false;
 
     private void OnTriggerEnter(Collider other)
     {
-       // if (!triggerOnExit && IsPlayer(other))
+        if (!triggerOnExit && IsPlayer(other))
         {
-            ToggleObject();
+            ToggleObjects();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-       // if (triggerOnExit && IsPlayer(other))
+        if (triggerOnExit && IsPlayer(other))
         {
-            ToggleObject();
+            ToggleObjects();
         }
     }
 
     private bool IsPlayer(Collider col)
     {
-        return col.CompareTag(playerTag) && targetObject != null;
+        return col.CompareTag(playerTag) && targetObjects.Count > 0;
     }
 
-    private void ToggleObject()
+    private void ToggleObjects()
     {
-        targetObject.SetActive(!targetObject.activeSelf);
+        foreach (GameObject obj in targetObjects)
+        {
+            if (obj != null)
+            {
+                obj.SetActive(!obj.activeSelf);
+            }
+        }
     }
 }
