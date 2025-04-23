@@ -61,6 +61,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4026798544272339435, guid: 46a160c83cf235042bdb87c11d9d14ff, type: 3}
+      propertyPath: m_Color.g
+      value: 0.32496503
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026798544272339435, guid: 46a160c83cf235042bdb87c11d9d14ff, type: 3}
       propertyPath: m_Intensity
       value: 8
       objectReference: {fileID: 0}
@@ -99,8 +103,60 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2998336088295222270, guid: 46a160c83cf235042bdb87c11d9d14ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7821371820834943222}
+    - targetCorrespondingSourceObject: {fileID: 2727730542420607533, guid: 46a160c83cf235042bdb87c11d9d14ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4959534206734272091}
   m_SourcePrefab: {fileID: 100100000, guid: 46a160c83cf235042bdb87c11d9d14ff, type: 3}
+--- !u!1 &418726321547776477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2998336088295222270, guid: 46a160c83cf235042bdb87c11d9d14ff, type: 3}
+  m_PrefabInstance: {fileID: 3194080830433802787}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7821371820834943222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418726321547776477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9114bfd63d72146926d45e5fb0a75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minIntensity: 5
+  maxIntensity: 10
+  flickerSpeed: 2
+  enableColorVariation: 1
+  baseColor: {r: 1, g: 0.40255025, b: 0.10196078, a: 1}
+  colorVariation: 0.082
+--- !u!1 &687221079505303566 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2727730542420607533, guid: 46a160c83cf235042bdb87c11d9d14ff, type: 3}
+  m_PrefabInstance: {fileID: 3194080830433802787}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4959534206734272091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687221079505303566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9114bfd63d72146926d45e5fb0a75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minIntensity: 5
+  maxIntensity: 10
+  flickerSpeed: 2
+  enableColorVariation: 1
+  baseColor: {r: 1, g: 0.47378492, b: 0.10196078, a: 1}
+  colorVariation: 0.022
 --- !u!4 &2894306005926518499 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 322293718480823488, guid: 46a160c83cf235042bdb87c11d9d14ff, type: 3}
@@ -168,7 +224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2144389129947646123, guid: 1b68eb62441c5e640aa78028fe24bc6a, type: 3}
       propertyPath: m_Name
-      value: Campfire Variant
+      value: Campfire_Newest
       objectReference: {fileID: 0}
     - target: {fileID: 2396308682234756968, guid: 1b68eb62441c5e640aa78028fe24bc6a, type: 3}
       propertyPath: m_AdditionalLightsShadowResolutionTier
