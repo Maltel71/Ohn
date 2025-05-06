@@ -2,35 +2,43 @@ using UnityEngine;
 
 public class ParentOnTrigger : MonoBehaviour
 {
-    // Reference to the object that will become the parent (e.g., a boat)
     public Transform parentObject;
+    public Transform playerTransform;
 
-    // Optional tag to check (if you only want specific objects to be parented)
-    public string playerTag = "Player";
+    // We'll use this to help debug
+    private bool hasTriggered = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the object entering the trigger has the specified tag
-        if (other.CompareTag(playerTag))
-        {
-            // Parent the player to the parent object
-            other.transform.SetParent(parentObject);
+        Debug.Log("Trigger entered by: " + other.gameObject.name);
 
-            // Optional: Log for debugging
-            Debug.Log("Player parented to " + parentObject.name);
+        // Check if we're interacting with any part of the player
+        if (playerTransform != null && !hasTriggered)
+        {
+            if (other.gameObject.GetComponent<CharacterController>() != null ||
+                other.transform == playerTransform)
+            {
+                Debug.Log("Parenting player to: " + parentObject.name);
+                playerTransform.SetParent(parentObject);
+                hasTriggered = true;
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        // Check if the object exiting the trigger has the specified tag
-        if (other.CompareTag(playerTag))
-        {
-            // Unparent the player (set parent to null)
-            other.transform.SetParent(null);
+        Debug.Log("Trigger exited by: " + other.gameObject.name);
 
-            // Optional: Log for debugging
-            Debug.Log("Player unparented from " + parentObject.name);
+        // Check if we're interacting with any part of the player
+        if (playerTransform != null && hasTriggered)
+        {
+            if (other.gameObject.GetComponent<CharacterController>() != null ||
+                other.transform == playerTransform)
+            {
+                Debug.Log("Unparenting player");
+                playerTransform.SetParent(null);
+                hasTriggered = false;
+            }
         }
     }
 }
