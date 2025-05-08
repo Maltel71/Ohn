@@ -1,44 +1,34 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ParentOnTrigger : MonoBehaviour
 {
-    public Transform parentObject;
-    public Transform playerTransform;
+    public GameObject Player;
 
-    // We'll use this to help debug
-    private bool hasTriggered = false;
+    private void Start()
+    {
+        // Find the player using tag
+        Player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger entered by: " + other.gameObject.name);
-
-        // Check if we're interacting with any part of the player
-        if (playerTransform != null && !hasTriggered)
+        if (other.tag == "Player")
         {
-            if (other.gameObject.GetComponent<CharacterController>() != null ||
-                other.transform == playerTransform)
-            {
-                Debug.Log("Parenting player to: " + parentObject.name);
-                playerTransform.SetParent(parentObject);
-                hasTriggered = true;
-            }
+            // Parent the player to the parent object (which could be the boat)
+            Player.transform.parent = transform.parent;
+            Debug.Log("Player parented to boat");
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Trigger exited by: " + other.gameObject.name);
-
-        // Check if we're interacting with any part of the player
-        if (playerTransform != null && hasTriggered)
+        if (other.tag == "Player")
         {
-            if (other.gameObject.GetComponent<CharacterController>() != null ||
-                other.transform == playerTransform)
-            {
-                Debug.Log("Unparenting player");
-                playerTransform.SetParent(null);
-                hasTriggered = false;
-            }
+            // Unparent the player
+            Player.transform.parent = null;
+            Debug.Log("Player unparented from boat");
         }
     }
 }
