@@ -3311,6 +3311,7 @@ GameObject:
   - component: {fileID: 303670545}
   - component: {fileID: 303670547}
   - component: {fileID: 303670548}
+  - component: {fileID: 303670549}
   m_Layer: 0
   m_Name: ParentPlayerToShipCollider
   m_TagString: Untagged
@@ -3366,6 +3367,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf83c9c5057a4040b3467f4b03c957d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &303670549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303670544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fee0164672f27a4aad72973b7ffaa29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToParent: {fileID: 620069252}
+  parentTarget: {fileID: 967616102}
 --- !u!1001 &318193788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11559,6 +11574,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3063729970841667362, guid: 42cacb5486e847c429b56241f779b780, type: 3}
+      propertyPath: m_Height
+      value: 1.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 3063729970841667362, guid: 42cacb5486e847c429b56241f779b780, type: 3}
+      propertyPath: m_Center.y
+      value: 0.36
+      objectReference: {fileID: 0}
     - target: {fileID: 6122337174136497770, guid: 42cacb5486e847c429b56241f779b780, type: 3}
       propertyPath: m_LocalPosition.x
       value: -88.96
@@ -11602,6 +11625,18 @@ PrefabInstance:
     - target: {fileID: 7614571373991837250, guid: 42cacb5486e847c429b56241f779b780, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838282264520641380, guid: 42cacb5486e847c429b56241f779b780, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.673
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988607928292692814, guid: 42cacb5486e847c429b56241f779b780, type: 3}
+      propertyPath: jumpForce
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988607928292692814, guid: 42cacb5486e847c429b56241f779b780, type: 3}
+      propertyPath: pushPower
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8988607928292692814, guid: 42cacb5486e847c429b56241f779b780, type: 3}
       propertyPath: groundLayer.m_Bits
@@ -18328,6 +18363,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 303670545}
   - {fileID: 967616102}
   - {fileID: 1145933675}
   - {fileID: 1274649533}
@@ -18369,7 +18405,6 @@ Transform:
   - {fileID: 555893217}
   - {fileID: 257475091}
   - {fileID: 792297925}
-  - {fileID: 303670545}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 152.033, z: 0}
 --- !u!114 &1283731365
