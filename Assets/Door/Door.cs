@@ -10,12 +10,16 @@ public class Door : MonoBehaviour
     [SerializeField] private Animator doorAnimator;
     [SerializeField] private string openAnimationTrigger = "DoorOpening";
 
-    [Header("Physics")]
-    [SerializeField] private Rigidbody objectToActivate; // Object to make non-kinematic when door opens
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
 
-    [Header("UI (Optional)")]
-    [SerializeField] private GameObject promptUI; // Optional "Press E to open" prompt
-    [SerializeField] private GameObject noKeyUI; // Optional "You need a key" prompt
+    [Header("Physics")]
+    [SerializeField] private Rigidbody objectToActivate;
+
+    [Header("UI Prompts")]
+    [SerializeField] private GameObject openPromptCanvas;
+    [SerializeField] private GameObject needKeyPromptCanvas;
+    [SerializeField] private GameObject keyIconUI;
 
     private Transform playerTransform;
     private bool canInteract = false;
@@ -23,29 +27,25 @@ public class Door : MonoBehaviour
 
     void Start()
     {
-        // Find the player
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
             playerTransform = player.transform;
         }
 
-        // Get animator if not assigned
         if (doorAnimator == null)
         {
             doorAnimator = GetComponent<Animator>();
         }
 
-        // Hide UI prompts initially
-        if (promptUI != null) promptUI.SetActive(false);
-        if (noKeyUI != null) noKeyUI.SetActive(false);
+        if (openPromptCanvas != null) openPromptCanvas.SetActive(false);
+        if (needKeyPromptCanvas != null) needKeyPromptCanvas.SetActive(false);
     }
 
     void Update()
     {
         if (isOpened || playerTransform == null) return;
 
-        // Check distance to player
         float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
 
         if (distanceToPlayer <= interactionRange)
@@ -53,10 +53,9 @@ public class Door : MonoBehaviour
             if (!canInteract)
             {
                 canInteract = true;
-                ShowPrompts(true);
+                ShowAppropriatePrompt(true);
             }
 
-            // Check for interaction input
             if (Input.GetKeyDown(interactKey))
             {
                 TryOpenDoor();
@@ -67,21 +66,19 @@ public class Door : MonoBehaviour
             if (canInteract)
             {
                 canInteract = false;
-                ShowPrompts(false);
+                ShowAppropriatePrompt(false);
             }
         }
     }
 
     void TryOpenDoor()
     {
-        // Check if player has key
         if (KeyManager.Instance != null && KeyManager.Instance.HasKey)
         {
             OpenDoor();
         }
         else
         {
-            // Show "need key" message briefly
             ShowNoKeyMessage();
         }
     }
@@ -92,44 +89,45 @@ public class Door : MonoBehaviour
 
         isOpened = true;
 
-        // Play opening animation
+        if (audioSource != null && audioSource.clip != null)
+        {
+            audioSource.Play();
+        }
+
         if (doorAnimator != null)
         {
             doorAnimator.SetTrigger(openAnimationTrigger);
         }
 
-        // Activate physics object (make it non-kinematic)
         if (objectToActivate != null)
         {
             objectToActivate.isKinematic = false;
             Debug.Log($"{objectToActivate.name} is now non-kinematic and will be affected by physics!");
         }
 
-        // Hide prompts
-        ShowPrompts(false);
+        if (openPromptCanvas != null) openPromptCanvas.SetActive(false);
+        if (needKeyPromptCanvas != null) needKeyPromptCanvas.SetActive(false);
+        if (keyIconUI != null) keyIconUI.SetActive(false);
 
         Debug.Log("Door opened!");
     }
 
-    void ShowPrompts(bool show)
+    void ShowAppropriatePrompt(bool show)
     {
         if (show && KeyManager.Instance != null && KeyManager.Instance.HasKey)
         {
-            // Show "Press E to open" if player has key
-            if (promptUI != null) promptUI.SetActive(true);
-            if (noKeyUI != null) noKeyUI.SetActive(false);
+            if (openPromptCanvas != null) openPromptCanvas.SetActive(true);
+            if (needKeyPromptCanvas != null) needKeyPromptCanvas.SetActive(false);
         }
         else if (show)
         {
-            // Show "You need a key" if player doesn't have key
-            if (promptUI != null) promptUI.SetActive(false);
-            if (noKeyUI != null) noKeyUI.SetActive(true);
+            if (openPromptCanvas != null) openPromptCanvas.SetActive(false);
+            if (needKeyPromptCanvas != null) needKeyPromptCanvas.SetActive(true);
         }
         else
         {
-            // Hide all prompts
-            if (promptUI != null) promptUI.SetActive(false);
-            if (noKeyUI != null) noKeyUI.SetActive(false);
+            if (openPromptCanvas != null) openPromptCanvas.SetActive(false);
+            if (needKeyPromptCanvas != null) needKeyPromptCanvas.SetActive(false);
         }
     }
 
@@ -137,23 +135,21 @@ public class Door : MonoBehaviour
     {
         Debug.Log("You need a key to open this door!");
 
-        // Brief flash of the no-key message
-        if (noKeyUI != null)
+        if (needKeyPromptCanvas != null)
         {
-            noKeyUI.SetActive(true);
+            needKeyPromptCanvas.SetActive(true);
             Invoke(nameof(HideNoKeyMessage), 2f);
         }
     }
 
     void HideNoKeyMessage()
     {
-        if (noKeyUI != null)
+        if (needKeyPromptCanvas != null)
         {
-            noKeyUI.SetActive(false);
+            needKeyPromptCanvas.SetActive(false);
         }
     }
 
-    // Visual debug in scene view
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
