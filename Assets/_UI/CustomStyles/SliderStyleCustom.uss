@@ -1,0 +1,15 @@
+Slider #unity-tracker {
+    height: 60%;
+}
+
+Slider #unity-dragger {
+    height: 100%;
+}
+
+Slider #unity-drag-container {
+}
+
+.unity-slider__input {
+    height: 60%;
+    align-content: center;
+}
