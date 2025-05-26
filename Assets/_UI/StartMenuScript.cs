@@ -67,7 +67,7 @@ public class StartMenuScript : MonoBehaviour
 
     private void OnMasterSliderChanged(ChangeEvent<float> value)
     {
-        mixer.SetFloat("MasterVolume", value.newValue);
+        mixer.SetFloat("MasterVolume", Mathf.Log(value.newValue) * 20 );
         Debug.Log("MasterSlider Value Changed: " + value.newValue);
 
     }
