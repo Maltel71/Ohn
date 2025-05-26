@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class StartMenuScript : MonoBehaviour
 {
     private UIDocument document;
     private VisualElement MainMenu;
     private VisualElement OptionsMenu;
+
+    public AudioMixer mixer;
 
 
     void Awake()
@@ -30,14 +33,14 @@ public class StartMenuScript : MonoBehaviour
 
         OptionsMenu = document.rootVisualElement.Q("OptionsMenu");
 
+        Slider masterSlider = OptionsMenu.Q("MasterSlider") as Slider;
+        masterSlider.RegisterValueChangedCallback(OnMasterSliderChanged);
+
+        Button backButton = MainMenu.Q("Back") as Button;
+        backButton.RegisterCallback<ClickEvent>(OnBackClicked);
+
+
     }
-
-    void Update()
-    {
-        
-    }
-
-
 
     private void OnPlayClicked(ClickEvent evt)
     {
@@ -53,6 +56,23 @@ public class StartMenuScript : MonoBehaviour
 
     }
 
+    private void OnBackClicked(ClickEvent evt)
+    {
+        MainMenu.style.display = DisplayStyle.Flex;
+        OptionsMenu.style.display = DisplayStyle.None;
+
+    }
+
+
+
+    private void OnMasterSliderChanged(ChangeEvent<float> value)
+    {
+        mixer.SetFloat("MasterVolume", value.newValue);
+        Debug.Log("MasterSlider Value Changed: " + value.newValue);
+
+    }
+
+    
 
 
 

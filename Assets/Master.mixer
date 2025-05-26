@@ -100,6 +100,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: 2d48b011d490bb84584c1c84be71d540
+    name: MasterVolume
   - guid: 99d5cf211109cd54bb71629be6e5b0c4
     name: ReverbVolumeParameter
   m_AudioMixerGroupViews:

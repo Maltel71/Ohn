@@ -4261,7 +4261,7 @@ GameObject:
   - component: {fileID: 416609393}
   - component: {fileID: 416609392}
   - component: {fileID: 416609394}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4314,6 +4314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8087a74127aa4df469ee46aeabc949fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 5df131c5fd9a47f4ab9b61c64608b86b, type: 2}
 --- !u!4 &417248844 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 633674692231776612, guid: 1d54e7e69637abc488abed3f9d2b3909, type: 3}
@@ -4677,6 +4678,10 @@ PrefabInstance:
     - target: {fileID: 135756642000475821, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 135756642000475821, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: cursorLocked
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3837663348675104489, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_IsActive
