@@ -28196,9 +28196,11 @@ MonoBehaviour:
   interactKey: 101
   doorAnimator: {fileID: 0}
   openAnimationTrigger: DoorOpening
+  audioSource: {fileID: 0}
   objectToActivate: {fileID: 2104081665}
-  promptUI: {fileID: 0}
-  noKeyUI: {fileID: 0}
+  openPromptCanvas: {fileID: 0}
+  needKeyPromptCanvas: {fileID: 0}
+  keyIconUI: {fileID: 0}
 --- !u!1001 &1895712722
 PrefabInstance:
   m_ObjectHideFlags: 0
