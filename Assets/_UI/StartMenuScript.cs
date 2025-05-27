@@ -36,7 +36,7 @@ public class StartMenuScript : MonoBehaviour
         Slider masterSlider = OptionsMenu.Q("MasterSlider") as Slider;
         masterSlider.RegisterValueChangedCallback(OnMasterSliderChanged);
 
-        Button backButton = MainMenu.Q("Back") as Button;
+        Button backButton = OptionsMenu.Q("Back") as Button;
         backButton.RegisterCallback<ClickEvent>(OnBackClicked);
 
 
