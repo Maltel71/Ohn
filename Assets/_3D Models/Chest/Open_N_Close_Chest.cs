@@ -9,6 +9,11 @@ public class Open_N_Close_Chest : MonoBehaviour
     [SerializeField] private string openIdleAnimName = "OpenIdle";
     [SerializeField] private string closingAnimName = "Closing";
 
+    [Header("Audio Settings")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip openSound;
+    [SerializeField] private AudioClip closeSound;
+
     [Header("Interaction Settings")]
     [SerializeField] private float interactionDistance = 3f;
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
@@ -23,6 +28,12 @@ public class Open_N_Close_Chest : MonoBehaviour
         if (animator == null)
         {
             animator = GetComponent<Animator>();
+        }
+
+        // If audio source is not assigned, try to get it from this game object
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
         }
 
         // Start in closed idle state
@@ -45,14 +56,24 @@ public class Open_N_Close_Chest : MonoBehaviour
         if (!isOpen)
         {
             // Open the chest
+            PlaySound(openSound);
             animator.Play(openingAnimName);
             Invoke("OnOpeningComplete", GetAnimationClipLength(openingAnimName));
         }
         else
         {
             // Close the chest
+            PlaySound(closeSound);
             animator.Play(closingAnimName);
             Invoke("OnClosingComplete", GetAnimationClipLength(closingAnimName));
+        }
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.PlayOneShot(clip);
         }
     }
 
@@ -80,7 +101,6 @@ public class Open_N_Close_Chest : MonoBehaviour
                 return clip.length;
             }
         }
-
         // Default to 1 second if clip not found
         Debug.LogWarning($"Animation clip '{clipName}' not found! Using default length of 1 second.");
         return 1f;
@@ -94,7 +114,6 @@ public class Open_N_Close_Chest : MonoBehaviour
         {
             return Vector3.Distance(transform.position, player.transform.position) <= interactionDistance;
         }
-
         // If no player found, always return true (for testing)
         return true;
     }
