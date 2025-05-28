@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6573941155190645784}
   - component: {fileID: 7824035905202203581}
   - component: {fileID: 5435977216379477879}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lantern_01
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 6797563270449899187}
   - component: {fileID: 7973817458196233442}
   - component: {fileID: 6585319994961344836}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

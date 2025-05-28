@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(AudioSource))]
 public class MinimalThirdPersonController : MonoBehaviour
 {
     [Header("Movement Settings")]
@@ -20,22 +21,44 @@ public class MinimalThirdPersonController : MonoBehaviour
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
 
+    [Header("Audio Settings")]
+    public AudioClip[] footstepSounds;
+    public AudioClip[] runningSounds; // Optional: separate sounds for running
+    public AudioClip[] landingSounds;
+    [Range(0f, 1f)]
+    public float footstepVolume = 0.5f;
+    [Range(0f, 1f)]
+    public float landingVolume = 0.7f;
+    public float walkStepInterval = 0.5f; // Time between footsteps when walking
+    public float runStepInterval = 0.3f;  // Time between footsteps when running
+
     private CharacterController controller;
     private Transform cameraTransform;
+    private AudioSource audioSource;
     private Vector3 moveDirection;
     private float verticalVelocity;
     private bool isGrounded;
+    private bool wasGrounded; // Track previous grounded state for landing detection
     private Quaternion targetRotation;
 
     // Platform movement
     private Transform platformParent;
     private Vector3 lastPlatformPosition;
 
+    // Audio timing
+    private float stepTimer;
+    private bool isMoving;
+    private bool wasMoving;
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
+        audioSource = GetComponent<AudioSource>();
         cameraTransform = Camera.main.transform;
         targetRotation = transform.rotation;
+
+        // Initialize grounded state
+        wasGrounded = true;
 
         // Create ground check if not assigned
         if (groundCheck == null)
@@ -61,6 +84,9 @@ public class MinimalThirdPersonController : MonoBehaviour
             ToggleCursorLock();
         }
 
+        // Store previous grounded state for landing detection
+        wasGrounded = isGrounded;
+
         // Custom ground check
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -70,6 +96,12 @@ public class MinimalThirdPersonController : MonoBehaviour
         {
             Vector3 platformDelta = platformParent.position - lastPlatformPosition;
             canJump = canJump || platformDelta.y > 0;
+        }
+
+        // Landing sound detection
+        if (isGrounded && !wasGrounded && verticalVelocity < -1f)
+        {
+            PlayLandingSound();
         }
 
         if (isGrounded && verticalVelocity < 0)
@@ -91,8 +123,13 @@ public class MinimalThirdPersonController : MonoBehaviour
 
         moveDirection = forward * verticalInput + right * horizontalInput;
 
+        // Check if player is moving
+        wasMoving = isMoving;
+        isMoving = moveDirection.magnitude > 0.1f && isGrounded;
+
         // Apply movement speed
-        float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
+        bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        float currentSpeed = isRunning ? sprintSpeed : walkSpeed;
         moveDirection *= currentSpeed;
 
         // Handle jumping - using our combined ground check
@@ -109,6 +146,9 @@ public class MinimalThirdPersonController : MonoBehaviour
         // Apply movement
         controller.Move(motion * Time.deltaTime);
 
+        // Handle footstep audio
+        HandleFootstepAudio(isRunning);
+
         // Smooth rotation - calculate target direction first
         if (moveDirection.x != 0 || moveDirection.z != 0)
         {
@@ -117,6 +157,65 @@ public class MinimalThirdPersonController : MonoBehaviour
 
         // Apply smooth rotation
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
+    }
+
+    private void HandleFootstepAudio(bool isRunning)
+    {
+        if (isMoving)
+        {
+            stepTimer += Time.deltaTime;
+
+            float currentStepInterval = isRunning ? runStepInterval : walkStepInterval;
+
+            if (stepTimer >= currentStepInterval)
+            {
+                PlayFootstepSound(isRunning);
+                stepTimer = 0f;
+            }
+        }
+        else
+        {
+            // Reset timer when not moving
+            stepTimer = 0f;
+        }
+    }
+
+    private void PlayFootstepSound(bool isRunning)
+    {
+        AudioClip[] soundArray;
+
+        // Use running sounds if available and running, otherwise use footstep sounds
+        if (isRunning && runningSounds != null && runningSounds.Length > 0)
+        {
+            soundArray = runningSounds;
+        }
+        else if (footstepSounds != null && footstepSounds.Length > 0)
+        {
+            soundArray = footstepSounds;
+        }
+        else
+        {
+            return; // No sounds available
+        }
+
+        // Play random sound from the array
+        AudioClip randomClip = soundArray[Random.Range(0, soundArray.Length)];
+        if (randomClip != null)
+        {
+            audioSource.PlayOneShot(randomClip, footstepVolume);
+        }
+    }
+
+    private void PlayLandingSound()
+    {
+        if (landingSounds != null && landingSounds.Length > 0)
+        {
+            AudioClip randomLandingClip = landingSounds[Random.Range(0, landingSounds.Length)];
+            if (randomLandingClip != null)
+            {
+                audioSource.PlayOneShot(randomLandingClip, landingVolume);
+            }
+        }
     }
 
     // New cursor lock methods
