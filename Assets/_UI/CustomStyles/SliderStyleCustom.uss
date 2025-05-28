@@ -1,15 +1,34 @@
 Slider #unity-tracker {
-    height: 60%;
+    height: 50px;
+    color: rgb(0, 0, 0);
 }
 
 Slider #unity-dragger {
-    height: 100%;
-}
-
-Slider #unity-drag-container {
+    height: 70px;
+    cursor: url("project://database/Assets/_UI/Textures/Ohn_SpeakerCursorIcon.png?fileID=2800000&guid=0ea2b0a663eafcf49b9e2a5df7bdafc5&type=3#Ohn_SpeakerCursorIcon");
 }
 
 .unity-slider__input {
-    height: 60%;
-    align-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 1;
+    flex-wrap: nowrap;
+    align-self: auto;
+    align-content: auto;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}
+
+Slider Label {
+    align-items: auto;
+    justify-content: space-evenly;
+    bottom: 10px;
+}
+
+#OptionsMenu > #VisualElement > #MasterSlider > .unity-slider__input {
+}
+
+#OptionsMenu > #VisualElement > #MasterSlider > .unity-slider__input > #unity-drag-container > #unity-tracker > #unity-fill {
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    background-color: rgb(156, 122, 184);
 }
