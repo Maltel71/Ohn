@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3530422547307290409}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WoodenPlattform_01
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -94,6 +94,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenPlank_2m_Red (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4307237219903006501, guid: 398243363f6fc10429aaf514a16c4be2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -155,6 +159,10 @@ PrefabInstance:
     - target: {fileID: 4307237219903006501, guid: 398243363f6fc10429aaf514a16c4be2, type: 3}
       propertyPath: m_Name
       value: WoodenPlank_2m_Red (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307237219903006501, guid: 398243363f6fc10429aaf514a16c4be2, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -218,6 +226,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenPlank_2m_Red (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4307237219903006501, guid: 398243363f6fc10429aaf514a16c4be2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -279,6 +291,10 @@ PrefabInstance:
     - target: {fileID: 4307237219903006501, guid: 398243363f6fc10429aaf514a16c4be2, type: 3}
       propertyPath: m_Name
       value: WoodenPlank_2m_Red (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307237219903006501, guid: 398243363f6fc10429aaf514a16c4be2, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -342,6 +358,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenPlank_2m_Red (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4307237219903006501, guid: 398243363f6fc10429aaf514a16c4be2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -403,6 +423,10 @@ PrefabInstance:
     - target: {fileID: 4307237219903006501, guid: 398243363f6fc10429aaf514a16c4be2, type: 3}
       propertyPath: m_Name
       value: WoodenPlank_2m_Red (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307237219903006501, guid: 398243363f6fc10429aaf514a16c4be2, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -466,6 +490,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenPlank_2m_Red (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 4307237219903006501, guid: 398243363f6fc10429aaf514a16c4be2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -527,6 +555,10 @@ PrefabInstance:
     - target: {fileID: 4307237219903006501, guid: 398243363f6fc10429aaf514a16c4be2, type: 3}
       propertyPath: m_Name
       value: WoodenPlank_2m_Red (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307237219903006501, guid: 398243363f6fc10429aaf514a16c4be2, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -590,6 +622,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenPlank_2m_Red (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4307237219903006501, guid: 398243363f6fc10429aaf514a16c4be2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -652,6 +688,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenPlank_2m_Red (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 4307237219903006501, guid: 398243363f6fc10429aaf514a16c4be2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -713,6 +753,10 @@ PrefabInstance:
     - target: {fileID: 4307237219903006501, guid: 398243363f6fc10429aaf514a16c4be2, type: 3}
       propertyPath: m_Name
       value: WoodenPlank_2m_Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307237219903006501, guid: 398243363f6fc10429aaf514a16c4be2, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

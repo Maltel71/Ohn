@@ -56,6 +56,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenBarrel_01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 65f80dabc3352e242a9fd0b83ff18352, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 65f80dabc3352e242a9fd0b83ff18352, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

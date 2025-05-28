@@ -57,6 +57,14 @@ PrefabInstance:
       value: WoodenPlank_1m_Red
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e8d9aea1404562b43984689b48b6c9cc, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e8d9aea1404562b43984689b48b6c9cc, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e8d9aea1404562b43984689b48b6c9cc, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
