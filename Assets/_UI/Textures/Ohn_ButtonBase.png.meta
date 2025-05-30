@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d4d4b115d0ba4d246a7ea1daee3235a1
+guid: 59bb32e4098badc4ba885cebccfcbcc8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -71,7 +71,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -97,23 +97,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ohn_BackBtn_0
+      name: Ohn_ButtonBase
       rect:
         serializedVersion: 2
         x: 2
-        y: 177
+        y: 178
         width: 496
-        height: 321
+        height: 318
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 66, y: 60, z: 60, w: 69}
+      pivot: {x: 0, y: 0}
+      border: {x: 72, y: 62, z: 65, w: 67}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9d33a0eaa93fca428af9aef3db0dbe2
-      internalID: -1795306751
+      spriteID: a315c50bf1945504db3c8679db499319
+      internalID: -1514788583
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6c5f33c2f9aeddf4eaaa38e8d393e933
+    spriteID: 3cc81bc93e26c9942986f2f869da2097
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ohn_BackBtn_0: -1795306751
+      Ohn_ButtonBase: -1514788583
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

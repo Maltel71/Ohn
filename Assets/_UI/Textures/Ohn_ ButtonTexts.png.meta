@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 228c0779ab68c3e4bada075963f35ad2
+guid: 967da1968dfad684dac7907e0c27fa19
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ohn_btnFrame_0
+      name: Ohn_ ButtonTexts_Play
       rect:
         serializedVersion: 2
-        x: 6
-        y: 296
-        width: 404
-        height: 199
+        x: 19
+        y: 781
+        width: 337
+        height: 203
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 510bbe039232174468e8c643d9cc9c68
-      internalID: -599324965
+      spriteID: 9e626808554705b42b99b4c0a886cf92
+      internalID: -746835328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ohn_ ButtonTexts_Back
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 801
+        width: 327
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eb76bd0cef6349488ec4d28ec6eda59
+      internalID: 404682485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ohn_ ButtonTexts_Quit
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 579
+        width: 257
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3380e93f5bde2a489f8b9c7e11b273b
+      internalID: 31296198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ohn_ ButtonTexts_Options
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 560
+        width: 367
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9706eb20102ede944bbdbfd758d1322c
+      internalID: -1911853339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ohn_ ButtonTexts_JammingPirates
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 116
+        width: 768
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd0218c7ba277a74b855e2a0e8849847
+      internalID: 1331365753
       vertices: []
       indices: 
       edges: []
@@ -122,7 +210,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c5e7848f8ebbfb749b8dd957ef8492af
+    spriteID: 3e0e73b18d7e6e84fbdcfa78ee2a5c94
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +220,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ohn_btnFrame_0: -599324965
+      Ohn_ ButtonTexts_Back: 404682485
+      Ohn_ ButtonTexts_JammingPirates: 1331365753
+      Ohn_ ButtonTexts_Options: -1911853339
+      Ohn_ ButtonTexts_Play: -746835328
+      Ohn_ ButtonTexts_Quit: 31296198
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

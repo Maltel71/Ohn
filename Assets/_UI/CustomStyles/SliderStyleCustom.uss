@@ -32,3 +32,15 @@ Slider Label {
     color: rgb(0, 0, 0);
     background-color: rgb(156, 122, 184);
 }
+
+Button Image {
+    background-image: url("project://database/Assets/_UI/Textures/Ohn_ButtonBase.png?fileID=-1514788583&guid=59bb32e4098badc4ba885cebccfcbcc8&type=3#Ohn_ButtonBase");
+    -unity-background-scale-mode: scale-and-crop;
+    background-size: 100% 100%;
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: 100%;
+}
+
+Button TextElement {
+}
