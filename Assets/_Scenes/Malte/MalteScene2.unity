@@ -10743,6 +10743,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PirateCave_01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7126bb3c0a488414daa2d8e49438a994, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7126bb3c0a488414daa2d8e49438a994, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10753,9 +10761,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7126bb3c0a488414daa2d8e49438a994, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2092314911}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7126bb3c0a488414daa2d8e49438a994, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2092314917}
   m_SourcePrefab: {fileID: 100100000, guid: 7126bb3c0a488414daa2d8e49438a994, type: 3}
 --- !u!1001 &461474153
 PrefabInstance:
@@ -60660,33 +60665,6 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4950423851220714650, guid: 7126bb3c0a488414daa2d8e49438a994, type: 3}
---- !u!4 &2092314914 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7126bb3c0a488414daa2d8e49438a994, type: 3}
-  m_PrefabInstance: {fileID: 460983924}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &2092314917
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092314907}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
@@ -60694,6 +60672,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4950423851220714650, guid: 7126bb3c0a488414daa2d8e49438a994, type: 3}
+--- !u!4 &2092314914 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7126bb3c0a488414daa2d8e49438a994, type: 3}
+  m_PrefabInstance: {fileID: 460983924}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2092314918
 MonoBehaviour:
   m_ObjectHideFlags: 0

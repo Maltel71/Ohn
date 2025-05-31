@@ -2988,6 +2988,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KeyMesh_Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 5432314091369976202, guid: 19ffbdd456ea60344ab0e65b0ad9485c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8746756476940071238, guid: 19ffbdd456ea60344ab0e65b0ad9485c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -30968,7 +30972,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30

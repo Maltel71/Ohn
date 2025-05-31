@@ -40,11 +40,7 @@ public class Open_N_Close_Chest : MonoBehaviour
     private void Start()
     {
         GameObject ui = GameObject.FindGameObjectWithTag("UI");
-
         menuScript = ui.GetComponent<StartMenuScript>();
-
-      
-
 
         // If animator is not assigned, try to get it from this game object
         if (animator == null)

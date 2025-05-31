@@ -6,6 +6,8 @@ using System.Collections;
 
 public class StartMenuScript : MonoBehaviour
 {
+    private MinimalThirdPersonController playerControllerScript;
+
     private UIDocument document;
     private VisualElement MainMenu;
     private VisualElement OptionsMenu;
@@ -88,6 +90,8 @@ public class StartMenuScript : MonoBehaviour
     {
         GameEndMenu.style.display = DisplayStyle.None;
         Time.timeScale = 1;
+        playerControllerScript.LockCursor();
+
 
     }
 
@@ -108,6 +112,8 @@ public class StartMenuScript : MonoBehaviour
     public void OnGameEnd()
     {
         StartCoroutine(GameEnd());
+        playerControllerScript.UnlockCursor();
+
     }
 
 
