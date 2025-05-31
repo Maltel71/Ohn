@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Open_N_Close_Chest : MonoBehaviour
 {
+    public StartMenuScript menuScript; // Referens till UI script;
+
+
     [Header("Animation Settings")]
     [SerializeField] private Animator animator;
     [SerializeField] private string closedIdleAnimName = "ClosedIdle";
@@ -82,6 +85,8 @@ public class Open_N_Close_Chest : MonoBehaviour
         isOpen = true;
         isTransitioning = false;
         animator.Play(openIdleAnimName);
+
+        menuScript.OnGameEnd();
     }
 
     private void OnClosingComplete()

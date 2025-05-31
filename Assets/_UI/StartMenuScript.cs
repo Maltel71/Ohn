@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using System.Collections;
 
 public class StartMenuScript : MonoBehaviour
 {
@@ -46,6 +47,10 @@ public class StartMenuScript : MonoBehaviour
         Button continueButton = GameEndMenu.Q("Continue") as Button;
         continueButton.RegisterCallback<ClickEvent>(OnContinueClicked);
 
+        Button endQuitButton = GameEndMenu.Q("Quit") as Button;
+        //endQuitButton.RegisterCallback<ClickEvent>((evt) => Application.Quit()); // Closes the application;
+        endQuitButton.RegisterCallback<ClickEvent>(OnQuitClicked); // Closes the application;
+
 
     }
 
@@ -73,9 +78,16 @@ public class StartMenuScript : MonoBehaviour
     private void OnContinueClicked(ClickEvent evt)
     {
         GameEndMenu.style.display = DisplayStyle.None;
+        Time.timeScale = 1;
 
     }
 
+    private void OnQuitClicked(ClickEvent evt)
+    {
+        Application.Quit();
+        Debug.Log("Quitting game");
+
+    }
 
     private void OnMasterSliderChanged(ChangeEvent<float> value)
     {
@@ -84,8 +96,19 @@ public class StartMenuScript : MonoBehaviour
 
     }
 
-    
+    public void OnGameEnd()
+    {
+        StartCoroutine(GameEnd());
+    }
 
+
+    IEnumerator GameEnd()
+    {
+        yield return new WaitForSeconds(2f);
+        GameEndMenu.style.display = DisplayStyle.Flex;
+        Time.timeScale = 0f;
+
+    }
 
 
 
