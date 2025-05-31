@@ -219,19 +219,19 @@ public class MinimalThirdPersonController : MonoBehaviour
     }
 
     // New cursor lock methods
-    public void LockCursor()
+    private void LockCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
-    public void UnlockCursor()
+    private void UnlockCursor()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 
-    public void ToggleCursorLock()
+    private void ToggleCursorLock()
     {
         if (Cursor.lockState == CursorLockMode.Locked)
         {

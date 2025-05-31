@@ -3,6 +3,7 @@ using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using System.Collections;
+using Cursor = UnityEngine.Cursor;
 
 public class StartMenuScript : MonoBehaviour
 {
@@ -90,7 +91,8 @@ public class StartMenuScript : MonoBehaviour
     {
         GameEndMenu.style.display = DisplayStyle.None;
         Time.timeScale = 1;
-        playerControllerScript.LockCursor();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
 
     }
@@ -112,7 +114,8 @@ public class StartMenuScript : MonoBehaviour
     public void OnGameEnd()
     {
         StartCoroutine(GameEnd());
-        playerControllerScript.UnlockCursor();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
     }
 
