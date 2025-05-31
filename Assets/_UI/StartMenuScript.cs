@@ -13,9 +13,17 @@ public class StartMenuScript : MonoBehaviour
 
     public AudioMixer mixer;
 
+    private static bool isCreated = false;
 
     void Awake()
     {
+        if (!isCreated)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            isCreated = true;
+            Debug.Log("Awake: " + this.gameObject);
+        }
+
         document = GetComponent<UIDocument>();
 
         //MainMenu
@@ -58,6 +66,7 @@ public class StartMenuScript : MonoBehaviour
     {
         //SceneManager.LoadScene("Game_Scene"); // Byt till denna när scenen är om
         SceneManager.LoadScene(1);
+        MainMenu.style.display = DisplayStyle.None;
         Debug.Log("You clicked the play button");
     }
 

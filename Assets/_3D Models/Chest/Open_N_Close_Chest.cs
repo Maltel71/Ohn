@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class Open_N_Close_Chest : MonoBehaviour
 {
-    public StartMenuScript menuScript; // Referens till UI script;
-
+    private StartMenuScript menuScript; // Referens till UI script;
+    public GameObject chestCamera;
+    private static bool isCreated = false;
 
     [Header("Animation Settings")]
     [SerializeField] private Animator animator;
@@ -25,8 +26,26 @@ public class Open_N_Close_Chest : MonoBehaviour
     private bool isOpen = false;
     private bool isTransitioning = false;
 
+
+    private void Awake()
+    {
+        if (!isCreated)
+        {
+            DontDestroyOnLoad(chestCamera);
+            isCreated = true;
+            Debug.Log("Awake: " + chestCamera);
+        }
+    }
+
     private void Start()
     {
+        GameObject ui = GameObject.FindGameObjectWithTag("UI");
+
+        menuScript = ui.GetComponent<StartMenuScript>();
+
+      
+
+
         // If animator is not assigned, try to get it from this game object
         if (animator == null)
         {
@@ -62,6 +81,8 @@ public class Open_N_Close_Chest : MonoBehaviour
             PlaySound(openSound);
             animator.Play(openingAnimName);
             Invoke("OnOpeningComplete", GetAnimationClipLength(openingAnimName));
+            menuScript.OnGameEnd();
+
         }
         else
         {
@@ -86,7 +107,7 @@ public class Open_N_Close_Chest : MonoBehaviour
         isTransitioning = false;
         animator.Play(openIdleAnimName);
 
-        menuScript.OnGameEnd();
+        
     }
 
     private void OnClosingComplete()
