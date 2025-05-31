@@ -8,6 +8,7 @@ public class StartMenuScript : MonoBehaviour
     private UIDocument document;
     private VisualElement MainMenu;
     private VisualElement OptionsMenu;
+    private VisualElement GameEndMenu;
 
     public AudioMixer mixer;
 
@@ -39,12 +40,18 @@ public class StartMenuScript : MonoBehaviour
         Button backButton = OptionsMenu.Q("Back") as Button;
         backButton.RegisterCallback<ClickEvent>(OnBackClicked);
 
+        //GameEndMenu
+        GameEndMenu = document.rootVisualElement.Q("GameEndMenu");
+
+        Button continueButton = GameEndMenu.Q("Continue") as Button;
+        continueButton.RegisterCallback<ClickEvent>(OnContinueClicked);
+
 
     }
 
     private void OnPlayClicked(ClickEvent evt)
     {
-        //SceneManager.LoadScene("Game_Scene");
+        //SceneManager.LoadScene("Game_Scene"); // Byt till denna när scenen är om
         SceneManager.LoadScene(1);
         Debug.Log("You clicked the play button");
     }
@@ -63,6 +70,11 @@ public class StartMenuScript : MonoBehaviour
 
     }
 
+    private void OnContinueClicked(ClickEvent evt)
+    {
+        GameEndMenu.style.display = DisplayStyle.None;
+
+    }
 
 
     private void OnMasterSliderChanged(ChangeEvent<float> value)

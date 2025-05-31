@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4e5627825237510449529bf177fdc91e
+guid: fed28b61388b25f4a97cb4000f40c35b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,23 +97,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ohn_OptionsFrame_0
+      name: Ohn_BackToJammingBtn_0
       rect:
         serializedVersion: 2
-        x: 68
-        y: 22
-        width: 1835
-        height: 1940
+        x: 10
+        y: 417
+        width: 942
+        height: 437
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 220, y: 204, z: 232, w: 228}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 038b7102b19c2224080bb40d1b7f7450
-      internalID: -2032633966
+      spriteID: 6c099341789014e439e40620cadb0708
+      internalID: 1899995394
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bfaa71ba5a6525c478c3904da064997d
+    spriteID: 84bb46843e519604084a623e40fb0dcd
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ohn_OptionsFrame_0: -2032633966
+      Ohn_BackToJammingBtn_0: 1899995394
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
