@@ -8,7 +8,6 @@ using Cursor = UnityEngine.Cursor;
 
 public class StartMenuScript : MonoBehaviour
 {
-    private MinimalThirdPersonController playerControllerScript;
 
     private UIDocument document;
     private VisualElement MainMenu;
@@ -26,17 +25,18 @@ public class StartMenuScript : MonoBehaviour
     private void Awake()
     {
         document = GetComponent<UIDocument>();
-    }
 
-    private void OnEnable()
-    {
         if (!isCreated)
         {
             DontDestroyOnLoad(this.gameObject);
             isCreated = true;
             Debug.LogError(this.gameObject + " is undestroyable");
         }
+    }
 
+    private void OnEnable()
+    {
+       
         //MainMenu
         MainMenu = document.rootVisualElement.Q("MainMenu");
         Button playButton = MainMenu.Q("Play") as Button;
@@ -49,7 +49,7 @@ public class StartMenuScript : MonoBehaviour
         credButton.RegisterCallback<ClickEvent>(OnCredClicked);
 
         Button quitButton = MainMenu.Q("Quit") as Button;
-        quitButton.RegisterCallback<ClickEvent>((evt) => Application.Quit());
+        quitButton.RegisterCallback<ClickEvent>(OnQuitClicked);
 
         //OptionsMenu
         OptionsMenu = document.rootVisualElement.Q("OptionsMenu");
@@ -61,6 +61,7 @@ public class StartMenuScript : MonoBehaviour
 
         //GameEndMenu
         GameEndMenu = document.rootVisualElement.Q("GameEndMenu");
+
         Button continueButton = GameEndMenu.Q("Continue") as Button;
         continueButton.RegisterCallback<ClickEvent>(OnContinueClicked);
 
