@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6097777778581250003}
   - component: {fileID: 8288396790524488517}
   - component: {fileID: 4810714267744395125}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Chest_Toppen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,11 +123,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 956ada2ff7be5fb4bb379a2d5046c8d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chestCamera: {fileID: 7283519829424705618, guid: e9661805a02abb745a24607bce4eb63b, type: 3}
   animator: {fileID: 6097777778581250003}
   closedIdleAnimName: Closed_Chest_Idle
   openingAnimName: chest_Animation
   openIdleAnimName: Open_Chest_Idle
   closingAnimName: Closing_Chest_animation
+  audioSource: {fileID: 0}
+  openSound: {fileID: 0}
+  closeSound: {fileID: 0}
   interactionDistance: 5
   interactionKey: 101
 --- !u!64 &4810714267744395125
@@ -164,7 +168,7 @@ GameObject:
   - component: {fileID: 7468810527913978372}
   - component: {fileID: 4630400614198828750}
   - component: {fileID: 8844167620687269581}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Chest_Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
