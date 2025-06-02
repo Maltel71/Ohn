@@ -5,7 +5,7 @@ Slider #unity-tracker {
 
 Slider #unity-dragger {
     height: 70px;
-    cursor: url("project://database/Assets/_UI/Textures/Ohn_SpeakerCursorIcon.png?fileID=2800000&guid=0ea2b0a663eafcf49b9e2a5df7bdafc5&type=3#Ohn_SpeakerCursorIcon");
+    cursor: url("project://database/Assets/_UI/Textures/KanTasBort/Ohn_SpeakerCursorIcon.png?fileID=2800000&guid=0ea2b0a663eafcf49b9e2a5df7bdafc5&type=3#Ohn_SpeakerCursorIcon");
 }
 
 .unity-slider__input {
@@ -27,14 +27,14 @@ Slider Label {
 #OptionsMenu > #VisualElement > #MasterSlider > .unity-slider__input {
 }
 
-#OptionsMenu > #VisualElement > #MasterSlider > .unity-slider__input > #unity-drag-container > #unity-tracker > #unity-fill {
+Slider #unity-tracker > #unity-fill {
     -unity-background-image-tint-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     background-color: rgb(156, 122, 184);
 }
 
 Button Image {
-    background-image: url("project://database/Assets/_UI/Textures/Ohn_ButtonBase.png?fileID=-1514788583&guid=59bb32e4098badc4ba885cebccfcbcc8&type=3#Ohn_ButtonBase");
+    background-image: url("project://database/Assets/_UI/Textures/KanTasBort/Ohn_ButtonBase.png?fileID=-1514788583&guid=59bb32e4098badc4ba885cebccfcbcc8&type=3#Ohn_ButtonBase");
     -unity-background-scale-mode: scale-and-crop;
     background-size: 100% 100%;
     background-color: rgba(0, 0, 0, 0);
