@@ -3705,7 +3705,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &337561654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4793,12 +4793,16 @@ PrefabInstance:
       value: PlayerArmature
       objectReference: {fileID: 0}
     - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: MoveSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: JumpHeight
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: SprintSpeed
@@ -4810,7 +4814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: RotationSmoothTime
-      value: 0.074
+      value: 0.275
       objectReference: {fileID: 0}
     - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: FootstepAudioVolume
@@ -5021,7 +5025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &486864897
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8527,7 +8531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &677797431
 Transform:
   m_ObjectHideFlags: 0
@@ -9085,7 +9089,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &733318218
 Transform:
   m_ObjectHideFlags: 0
@@ -12569,7 +12573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2816948923993972759, guid: eeeba1dddcd6f254588f5f5df1583ee5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3196430606601042605, guid: eeeba1dddcd6f254588f5f5df1583ee5, type: 3}
       propertyPath: m_LocalScale.x
@@ -13043,7 +13047,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1051544198
 Transform:
   m_ObjectHideFlags: 0
@@ -14082,7 +14086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1122530843
 Transform:
   m_ObjectHideFlags: 0
@@ -15310,12 +15314,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3411283653939108467, guid: edaafca7fccd7e34ab3d690e6748dffd, type: 3}
       propertyPath: m_Volume
-      value: 0.564
+      value: 0.206
       objectReference: {fileID: 0}
     - target: {fileID: 3411283653939108467, guid: edaafca7fccd7e34ab3d690e6748dffd, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 8300000, guid: 12dc5e273a8871a47992d270c5be2517, type: 3}
+      objectReference: {fileID: 8300000, guid: 77c0baef2ef9bca4496a76271ea3a4a1, type: 3}
     - target: {fileID: 3411283653939108467, guid: edaafca7fccd7e34ab3d690e6748dffd, type: 3}
       propertyPath: MaxDistance
       value: 32.6
@@ -15323,7 +15327,7 @@ PrefabInstance:
     - target: {fileID: 3411283653939108467, guid: edaafca7fccd7e34ab3d690e6748dffd, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 12dc5e273a8871a47992d270c5be2517, type: 3}
+      objectReference: {fileID: 8300000, guid: 77c0baef2ef9bca4496a76271ea3a4a1, type: 3}
     - target: {fileID: 3411283653939108467, guid: edaafca7fccd7e34ab3d690e6748dffd, type: 3}
       propertyPath: rolloffMode
       value: 2
@@ -15398,7 +15402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3411283653939108467, guid: edaafca7fccd7e34ab3d690e6748dffd, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3411283653939108467, guid: edaafca7fccd7e34ab3d690e6748dffd, type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inSlope
@@ -28332,7 +28336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1891734519
 Transform:
   m_ObjectHideFlags: 0
@@ -29877,7 +29881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2007406507
 Transform:
   m_ObjectHideFlags: 0
@@ -31135,7 +31139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2109416343
 Transform:
   m_ObjectHideFlags: 0
@@ -31412,7 +31416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4194652146400914556, guid: 021119ff26d6d7c47936d92113ec76ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 58.40551
+      value: 77.73
       objectReference: {fileID: 0}
     - target: {fileID: 4194652146400914556, guid: 021119ff26d6d7c47936d92113ec76ee, type: 3}
       propertyPath: m_LocalPosition.y
@@ -31728,7 +31732,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3779077378004040184, guid: 9dfa269ee4455fa44b7d03b56afbdbda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 60.58551
+      value: 79.44
       objectReference: {fileID: 0}
     - target: {fileID: 3779077378004040184, guid: 9dfa269ee4455fa44b7d03b56afbdbda, type: 3}
       propertyPath: m_LocalPosition.y
@@ -31736,7 +31740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3779077378004040184, guid: 9dfa269ee4455fa44b7d03b56afbdbda, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.98645
+      value: -19.45
       objectReference: {fileID: 0}
     - target: {fileID: 3779077378004040184, guid: 9dfa269ee4455fa44b7d03b56afbdbda, type: 3}
       propertyPath: m_LocalRotation.w

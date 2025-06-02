@@ -10707,6 +10707,10 @@ PrefabInstance:
       value: 5.4
       objectReference: {fileID: 0}
     - target: {fileID: 8988607928292692814, guid: 42cacb5486e847c429b56241f779b780, type: 3}
+      propertyPath: landingVolume
+      value: 0.103
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988607928292692814, guid: 42cacb5486e847c429b56241f779b780, type: 3}
       propertyPath: footstepVolume
       value: 0.05
       objectReference: {fileID: 0}
@@ -10723,13 +10727,33 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8988607928292692814, guid: 42cacb5486e847c429b56241f779b780, type: 3}
-      propertyPath: footstepSounds.Array.size
+      propertyPath: landingSounds.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8988607928292692814, guid: 42cacb5486e847c429b56241f779b780, type: 3}
+      propertyPath: footstepSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988607928292692814, guid: 42cacb5486e847c429b56241f779b780, type: 3}
+      propertyPath: 'landingSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 186de84b3207156479abe98f4958fed0, type: 3}
     - target: {fileID: 8988607928292692814, guid: 42cacb5486e847c429b56241f779b780, type: 3}
       propertyPath: 'footstepSounds.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: 72f526a6a9890f643a88e85a61c86c8a, type: 3}
+    - target: {fileID: 8988607928292692814, guid: 42cacb5486e847c429b56241f779b780, type: 3}
+      propertyPath: 'footstepSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 85016e0f2b01da248b9663dd49a161b0, type: 3}
+    - target: {fileID: 8988607928292692814, guid: 42cacb5486e847c429b56241f779b780, type: 3}
+      propertyPath: 'footstepSounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 186de84b3207156479abe98f4958fed0, type: 3}
+    - target: {fileID: 8988607928292692814, guid: 42cacb5486e847c429b56241f779b780, type: 3}
+      propertyPath: 'footstepSounds.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 14e8a8d2158bec840b56c54f5266e692, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

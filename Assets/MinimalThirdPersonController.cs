@@ -31,6 +31,10 @@ public class MinimalThirdPersonController : MonoBehaviour
     public float landingVolume = 0.7f;
     public float walkStepInterval = 0.5f; // Time between footsteps when walking
     public float runStepInterval = 0.3f;  // Time between footsteps when running
+    [Range(0f, 2f)]
+    public float minPitchVariation = 0.8f;
+    [Range(0f, 2f)]
+    public float maxPitchVariation = 1.2f;
 
     private CharacterController controller;
     private Transform cameraTransform;
@@ -198,10 +202,12 @@ public class MinimalThirdPersonController : MonoBehaviour
             return; // No sounds available
         }
 
-        // Play random sound from the array
+        // Play random sound from the array with pitch variation
         AudioClip randomClip = soundArray[Random.Range(0, soundArray.Length)];
         if (randomClip != null)
         {
+            float randomPitch = Random.Range(minPitchVariation, maxPitchVariation);
+            audioSource.pitch = randomPitch;
             audioSource.PlayOneShot(randomClip, footstepVolume);
         }
     }
