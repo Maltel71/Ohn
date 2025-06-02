@@ -56,6 +56,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom_Blue_02
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09747019656b24c4b8bb02cb546a4e6e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09747019656b24c4b8bb02cb546a4e6e, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
