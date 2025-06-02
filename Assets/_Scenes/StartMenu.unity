@@ -7310,7 +7310,7 @@ MonoBehaviour:
   TransparentLayers:
     serializedVersion: 2
     m_Bits: 0
-  MinimumDistanceFromTarget: 22.98
+  MinimumDistanceFromTarget: 0.6
   AvoidObstacles:
     Enabled: 1
     DistanceLimit: 0
