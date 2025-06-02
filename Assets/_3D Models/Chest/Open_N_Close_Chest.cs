@@ -3,8 +3,6 @@ using UnityEngine;
 public class Open_N_Close_Chest : MonoBehaviour
 {
     private StartMenuScript menuScript; // Referens till UI script;
-    public GameObject chestCamera;
-    private static bool isCreated = false;
 
     [Header("Animation Settings")]
     [SerializeField] private Animator animator;
@@ -27,15 +25,7 @@ public class Open_N_Close_Chest : MonoBehaviour
     private bool isTransitioning = false;
 
 
-    private void Awake()
-    {
-        if (!isCreated)
-        {
-            DontDestroyOnLoad(chestCamera);
-            isCreated = true;
-            Debug.Log("Awake: " + chestCamera);
-        }
-    }
+   
 
     private void Start()
     {
