@@ -13,6 +13,8 @@ public class StartMenuScript : MonoBehaviour
     private VisualElement MainMenu;
     private VisualElement OptionsMenu;
     private VisualElement GameEndMenu;
+    private VisualElement CredMenu;
+
 
     public AudioMixer mixer;
 
@@ -38,6 +40,9 @@ public class StartMenuScript : MonoBehaviour
         Button optionsButton = MainMenu.Q("Options") as Button;
         optionsButton.RegisterCallback<ClickEvent>(OnOptionsClicked);
 
+        Button credButton = GameEndMenu.Q("Credits") as Button;
+        credButton.RegisterCallback<ClickEvent>(OnCredClicked);
+
         Button quitButton = MainMenu.Q("Quit") as Button;
         quitButton.RegisterCallback<ClickEvent>((evt) => Application.Quit()); // Closes the application;
 
@@ -49,8 +54,8 @@ public class StartMenuScript : MonoBehaviour
         Slider masterSlider = OptionsMenu.Q("MasterSlider") as Slider;
         masterSlider.RegisterValueChangedCallback(OnMasterSliderChanged);
 
-        Button backButton = OptionsMenu.Q("Back") as Button;
-        backButton.RegisterCallback<ClickEvent>(OnBackClicked);
+        Button backToMainButton = OptionsMenu.Q("Back") as Button;
+        backToMainButton.RegisterCallback<ClickEvent>(OnBackToMainClicked);
 
         //GameEndMenu
         GameEndMenu = document.rootVisualElement.Q("GameEndMenu");
@@ -58,10 +63,18 @@ public class StartMenuScript : MonoBehaviour
         Button continueButton = GameEndMenu.Q("Continue") as Button;
         continueButton.RegisterCallback<ClickEvent>(OnContinueClicked);
 
+        Button endCredButton = GameEndMenu.Q("Credits") as Button;
+        endCredButton.RegisterCallback<ClickEvent>(OnCredClicked);
+
         Button endQuitButton = GameEndMenu.Q("Quit") as Button;
         //endQuitButton.RegisterCallback<ClickEvent>((evt) => Application.Quit()); // Closes the application;
         endQuitButton.RegisterCallback<ClickEvent>(OnQuitClicked); // Closes the application;
 
+        //CredMenu
+        CredMenu = document.rootVisualElement.Q("CreditsMenu");
+
+        Button backToEndButton = OptionsMenu.Q("Back") as Button;
+        backToEndButton.RegisterCallback<ClickEvent>(OnBackToEndClicked);
 
     }
 
@@ -80,10 +93,25 @@ public class StartMenuScript : MonoBehaviour
 
     }
 
-    private void OnBackClicked(ClickEvent evt)
+    private void OnCredClicked(ClickEvent evt)
+    {
+        MainMenu.style.display = DisplayStyle.None;
+        GameEndMenu.style.display = DisplayStyle.None;
+        CredMenu.style.display = DisplayStyle.Flex;
+
+    }
+
+    private void OnBackToMainClicked(ClickEvent evt)
     {
         MainMenu.style.display = DisplayStyle.Flex;
         OptionsMenu.style.display = DisplayStyle.None;
+
+    }
+
+    private void OnBackToEndClicked(ClickEvent evt)
+    {
+        GameEndMenu.style.display = DisplayStyle.Flex;
+        CredMenu.style.display = DisplayStyle.None;
 
     }
 
