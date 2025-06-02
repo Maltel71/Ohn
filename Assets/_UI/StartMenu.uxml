@@ -49,8 +49,8 @@
                 <engine:Label text="Music" name="MusicCred" style="font-size: 40px; -unity-text-align: upper-center; flex-direction: column; width: 100%; align-items: auto; top: auto; white-space: normal; -unity-font-style: bold; left: auto; height: 240px; align-self: center; bottom: auto;">
                     <engine:Label text="Bill Grahn&#10;Dorothea Hammarberg&#10;Maja Törnqvist" name="Name" style="font-size: 40px; -unity-text-align: upper-center; flex-direction: column; width: 495px; align-items: auto; top: 45px; white-space: normal; -unity-font-style: normal; -unity-paragraph-spacing: 0; left: auto; align-self: center;" />
                 </engine:Label>
-                <engine:Label text="Special thanks to" name="SpecialThanks" style="-unity-font-style: bold; font-size: 40px; width: 100%; height: 249px; align-items: stretch; justify-content: flex-end; align-content: auto; -unity-text-align: upper-center;">
-                    <engine:VisualElement name="BirkaLogo" style="background-image: url(&quot;project://database/Assets/_UI/Textures/BirkaLogo.png?fileID=2800000&amp;guid=39fd5b3e699080b46836066dccf521f6&amp;type=3#BirkaLogo&quot;); -unity-background-scale-mode: scale-to-fit; flex-basis: 188px; top: auto; background-size: contain; width: 50%; align-self: center;" />
+                <engine:Label text="Special thanks to our educator" name="SpecialThanks" style="-unity-font-style: bold; font-size: 40px; width: 100%; height: 249px; align-items: stretch; justify-content: flex-end; align-content: auto; -unity-text-align: upper-center;">
+                    <engine:VisualElement name="BirkaLogo" style="background-image: url(&quot;project://database/Assets/_UI/Textures/BirkaLogo.png?fileID=2800000&amp;guid=39fd5b3e699080b46836066dccf521f6&amp;type=3#BirkaLogo&quot;); -unity-background-scale-mode: scale-to-fit; flex-basis: 188px; top: auto; background-size: 50% 75%; width: 50%; align-self: center;" />
                 </engine:Label>
             </engine:VisualElement>
         </engine:VisualElement>
