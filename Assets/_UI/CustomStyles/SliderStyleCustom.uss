@@ -5,7 +5,7 @@ Slider #unity-tracker {
 
 Slider #unity-dragger {
     height: 70px;
-    cursor: url("project://database/Assets/_UI/Textures/KanTasBort/Ohn_SpeakerCursorIcon.png?fileID=2800000&guid=0ea2b0a663eafcf49b9e2a5df7bdafc5&type=3#Ohn_SpeakerCursorIcon");
+    cursor: url("project://database/Assets/_UI/Textures/Ohn_SpeakerCursorIcon.png?fileID=2800000&guid=0ea2b0a663eafcf49b9e2a5df7bdafc5&type=3#Ohn_SpeakerCursorIcon");
 }
 
 .unity-slider__input {

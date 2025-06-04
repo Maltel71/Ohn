@@ -83,10 +83,10 @@ public class MinimalThirdPersonController : MonoBehaviour
     private void Update()
     {
         // Handle cursor lock toggling
-        if (Input.GetKeyDown(toggleCursorLockKey))
+      /*  if (Input.GetKeyDown(toggleCursorLockKey))
         {
             ToggleCursorLock();
-        }
+        }*/
 
         // Store previous grounded state for landing detection
         wasGrounded = isGrounded;

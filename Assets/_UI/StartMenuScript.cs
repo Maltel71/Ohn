@@ -14,10 +14,16 @@ public class StartMenuScript : MonoBehaviour
     private VisualElement OptionsMenu;
     private VisualElement GameEndMenu;
     private VisualElement CredMenu;
+    private VisualElement PauseMenu;
+
 
     public AudioMixer mixer;
 
     private static bool isCreated = false;
+
+    private bool isPaused = false;
+
+    private string MalteScene2;
 
     private Stack<VisualElement> menuStack = new Stack<VisualElement>();
     private VisualElement currentMenu;
@@ -39,6 +45,7 @@ public class StartMenuScript : MonoBehaviour
        
         //MainMenu
         MainMenu = document.rootVisualElement.Q("MainMenu");
+
         Button playButton = MainMenu.Q("Play") as Button;
         playButton.RegisterCallback<ClickEvent>(OnPlayClicked);
 
@@ -53,11 +60,12 @@ public class StartMenuScript : MonoBehaviour
 
         //OptionsMenu
         OptionsMenu = document.rootVisualElement.Q("OptionsMenu");
+
         Slider masterSlider = OptionsMenu.Q("MasterSlider") as Slider;
         masterSlider.RegisterValueChangedCallback(OnMasterSliderChanged);
 
-        Button backToMainButton = OptionsMenu.Q("Back") as Button;
-        backToMainButton.RegisterCallback<ClickEvent>(OnBackClicked);
+        Button backButton = OptionsMenu.Q("Back") as Button;
+        backButton.RegisterCallback<ClickEvent>(OnBackClicked);
 
         //GameEndMenu
         GameEndMenu = document.rootVisualElement.Q("GameEndMenu");
@@ -65,19 +73,70 @@ public class StartMenuScript : MonoBehaviour
         Button continueButton = GameEndMenu.Q("Continue") as Button;
         continueButton.RegisterCallback<ClickEvent>(OnContinueClicked);
 
-        Button endCredButton = GameEndMenu.Q("Credits") as Button;
-        endCredButton.RegisterCallback<ClickEvent>(OnCredClicked);
+        credButton = GameEndMenu.Q("Credits") as Button;
+        credButton.RegisterCallback<ClickEvent>(OnCredClicked);
 
-        Button endQuitButton = GameEndMenu.Q("Quit") as Button;
-        endQuitButton.RegisterCallback<ClickEvent>(OnQuitClicked);
+        quitButton = GameEndMenu.Q("Quit") as Button;
+        quitButton.RegisterCallback<ClickEvent>(OnQuitClicked);
 
         //CredMenu
         CredMenu = document.rootVisualElement.Q("CreditsMenu");
-        Button backToEndButton = CredMenu.Q("Back") as Button;
-        backToEndButton.RegisterCallback<ClickEvent>(OnBackClicked);
+
+        backButton = CredMenu.Q("Back") as Button;
+        backButton.RegisterCallback<ClickEvent>(OnBackClicked);
+
+
+        //PauseMenu
+        PauseMenu = document.rootVisualElement.Q("PauseMenu");
+
+        continueButton = PauseMenu.Q("Continue") as Button;
+        continueButton.RegisterCallback<ClickEvent>(OnContinueClicked);
+
+        optionsButton = PauseMenu.Q("Options") as Button;
+        optionsButton.RegisterCallback<ClickEvent>(OnOptionsClicked);
+
+        quitButton = PauseMenu.Q("Quit") as Button;
+        quitButton.RegisterCallback<ClickEvent>(OnQuitClicked);
 
         ShowMenu(MainMenu);
     }
+
+    private void Update()
+    {
+
+        if (SceneManager.GetActiveScene().name == MalteScene2)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                TogglePauseMenu();
+            }
+        }
+       
+
+    }
+
+    private void TogglePauseMenu()
+    {
+        isPaused = !isPaused;
+
+        if (isPaused)
+        {
+            PauseMenu.style.display = DisplayStyle.Flex;
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+        else
+        {
+            PauseMenu.style.display = DisplayStyle.None;
+            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
+    }
+
 
     private void ShowMenu(VisualElement menuToShow)
     {
@@ -85,6 +144,7 @@ public class StartMenuScript : MonoBehaviour
         OptionsMenu.style.display = DisplayStyle.None;
         GameEndMenu.style.display = DisplayStyle.None;
         CredMenu.style.display = DisplayStyle.None;
+        PauseMenu.style.display = DisplayStyle.None;
 
         menuToShow.style.display = DisplayStyle.Flex;
         currentMenu = menuToShow;
@@ -98,6 +158,7 @@ public class StartMenuScript : MonoBehaviour
         }
         ShowMenu(newMenu);
     }
+
 
     public void OnBackClicked(ClickEvent evt)
     {
@@ -117,12 +178,16 @@ public class StartMenuScript : MonoBehaviour
         SceneManager.LoadScene(1);
         MainMenu.style.display = DisplayStyle.None;
         Debug.Log("You clicked the play button");
+
+       
     }
 
     private void OnOptionsClicked(ClickEvent evt)
     {
         OpenMenu(OptionsMenu);
     }
+
+   
 
     private void OnCredClicked(ClickEvent evt)
     {
@@ -138,7 +203,7 @@ public class StartMenuScript : MonoBehaviour
 
     private void OnContinueClicked(ClickEvent evt)
     {
-        GameEndMenu.style.display = DisplayStyle.None;
+        currentMenu.style.display = DisplayStyle.None;
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -155,6 +220,8 @@ public class StartMenuScript : MonoBehaviour
         mixer.SetFloat("MasterVolume", Mathf.Log(value.newValue) * 20);
         Debug.Log("MasterSlider Value Changed: " + value.newValue);
     }
+
+
 
     public void OnGameEnd()
     {
