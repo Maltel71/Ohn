@@ -88,6 +88,7 @@ public class StartMenuScript : MonoBehaviour
 
         //PauseMenu
         PauseMenu = document.rootVisualElement.Q("PauseMenu");
+        PauseMenu.RegisterCallback<KeyDownEvent>(evt => OnKeyDownEvent(evt));
 
         continueButton = PauseMenu.Q("Continue") as Button;
         continueButton.RegisterCallback<ClickEvent>(OnContinueClicked);
@@ -101,42 +102,7 @@ public class StartMenuScript : MonoBehaviour
         ShowMenu(MainMenu);
     }
 
-    private void Update()
-    {
-
-        if (SceneManager.GetActiveScene().name == MalteScene2)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                TogglePauseMenu();
-            }
-        }
-       
-
-    }
-
-    private void TogglePauseMenu()
-    {
-        isPaused = !isPaused;
-
-        if (isPaused)
-        {
-            PauseMenu.style.display = DisplayStyle.Flex;
-            Time.timeScale = 0f;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-
-        else
-        {
-            PauseMenu.style.display = DisplayStyle.None;
-            Time.timeScale = 1;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-
-    }
-
+   
 
     private void ShowMenu(VisualElement menuToShow)
     {
@@ -187,7 +153,6 @@ public class StartMenuScript : MonoBehaviour
         OpenMenu(OptionsMenu);
     }
 
-   
 
     private void OnCredClicked(ClickEvent evt)
     {
@@ -207,6 +172,37 @@ public class StartMenuScript : MonoBehaviour
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    private void TogglePauseMenu()
+    {
+
+        isPaused = !isPaused;
+
+        if (isPaused)
+        {
+            PauseMenu.style.display = DisplayStyle.Flex;
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+        else
+        {
+            PauseMenu.style.display = DisplayStyle.None;
+            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
+    }
+
+    private void OnKeyDownEvent(KeyDownEvent evt)
+    {
+        if (evt.keyCode == KeyCode.Escape)
+        {
+            TogglePauseMenu();
+        }
     }
 
     private void OnQuitClicked(ClickEvent evt)
