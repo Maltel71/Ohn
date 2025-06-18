@@ -8,7 +8,6 @@ using Cursor = UnityEngine.Cursor;
 
 public class StartMenuScript : MonoBehaviour
 {
-
     private UIDocument document;
     private VisualElement MainMenu;
     private VisualElement OptionsMenu;
@@ -16,14 +15,11 @@ public class StartMenuScript : MonoBehaviour
     private VisualElement CredMenu;
     private VisualElement PauseMenu;
 
-
     public AudioMixer mixer;
 
     private static bool isCreated = false;
 
     private bool isPaused = false;
-
-    private string MalteScene2;
 
     private Stack<VisualElement> menuStack = new Stack<VisualElement>();
     private VisualElement currentMenu;
@@ -144,8 +140,6 @@ public class StartMenuScript : MonoBehaviour
         SceneManager.LoadScene(1);
         MainMenu.style.display = DisplayStyle.None;
         Debug.Log("You clicked the play button");
-
-       
     }
 
     private void OnOptionsClicked(ClickEvent evt)
@@ -216,7 +210,6 @@ public class StartMenuScript : MonoBehaviour
         mixer.SetFloat("MasterVolume", Mathf.Log(value.newValue) * 20);
         Debug.Log("MasterSlider Value Changed: " + value.newValue);
     }
-
 
 
     public void OnGameEnd()
